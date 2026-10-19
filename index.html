@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Server Pulse — YGuard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="top">
+    <div class="brand" dir="ltr">YGUARD <span>/</span> PULSE</div>
+    <div class="live"><i></i> LIVE</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow" id="mode">Public</p>
+      <h1 id="serverName">YGuard · Mirage #3</h1>
+      <p class="sub" id="mapLine">de_mirage · round <span id="round">12</span></p>
+      <div class="score" dir="ltr">
+        <div>
+          <span class="label">CT</span>
+          <strong id="scoreCt">7</strong>
+        </div>
+        <div class="sep">:</div>
+        <div>
+          <span class="label">T</span>
+          <strong id="scoreT">5</strong>
+        </div>
+      </div>
+      <p class="cap" id="playersLine">8 / 10 players</p>
+    </section>
+
+    <section class="roster-wrap">
+      <h2>Roster</h2>
+      <p class="hint">Sorted by kills · ping color-coded</p>
+      <div class="roster" id="roster"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Server Pulse</span>
+    <span dir="ltr">github.com/kianPk</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
