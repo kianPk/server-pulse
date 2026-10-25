@@ -11,6 +11,7 @@
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
+  <div id="alertBanner" class="alert" hidden role="status"></div>
   <header class="top">
     <div class="brand" dir="ltr">YGUARD <span>/</span> PULSE</div>
     <div class="live"><i></i> LIVE</div>
@@ -33,11 +34,25 @@
         </div>
       </div>
       <p class="cap" id="playersLine">8 / 10 players</p>
+      <div class="spark-wrap">
+        <span class="spark-label">Players · last 30</span>
+        <div class="sparkline" id="sparkline" role="img"></div>
+      </div>
     </section>
 
     <section class="roster-wrap">
-      <h2>Roster</h2>
-      <p class="hint">Sorted by kills · ping color-coded</p>
+      <div class="roster-head">
+        <h2>Roster</h2>
+        <div class="sort" id="sortToggle" role="group" aria-label="Sort roster">
+          <button type="button" data-sort="kills" class="active">K</button>
+          <button type="button" data-sort="kd">K/D</button>
+          <button type="button" data-sort="ping">Ping</button>
+        </div>
+      </div>
+      <p class="hint" id="sortHint">Sorted by KILLS · ping color-coded</p>
+      <div class="cols" aria-hidden="true">
+        <span></span><span></span><span>K</span><span>D</span><span>K/D</span><span>ms</span>
+      </div>
       <div class="roster" id="roster"></div>
     </section>
   </main>

@@ -130,27 +130,109 @@ h1 {
   color: var(--muted);
 }
 
+.alert {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: linear-gradient(90deg, rgba(224, 122, 58, 0.95), rgba(224, 91, 91, 0.92));
+  color: #120c08;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.65rem 1rem;
+  letter-spacing: 0.02em;
+  animation: rise 0.4s ease both;
+}
+
+.spark-wrap {
+  margin-top: 1.5rem;
+  max-width: 28rem;
+}
+.spark-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.sparkline {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 48px;
+  padding: 0.35rem 0;
+}
+.sparkline .bar {
+  flex: 1;
+  min-width: 4px;
+  background: linear-gradient(180deg, var(--accent), rgba(91, 159, 212, 0.75));
+  border-radius: 2px 2px 0 0;
+  opacity: 0.85;
+  transition: height 0.35s ease;
+}
+
 .roster-wrap {
   padding: 1rem 0 3rem;
   animation: rise 0.75s 0.2s ease both;
+}
+.roster-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 .roster-wrap h2 {
   font-family: var(--display);
   font-size: 1.5rem;
 }
+.sort {
+  display: flex;
+  gap: 0.35rem;
+}
+.sort button {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+}
+.sort button.active,
+.sort button:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
 .hint {
   color: var(--muted);
   font-size: 0.9rem;
-  margin: 0.35rem 0 1.25rem;
+  margin: 0.35rem 0 0.75rem;
 }
+.cols {
+  display: grid;
+  grid-template-columns: 3rem 1fr 3.5rem 3.5rem 3.5rem 3.5rem;
+  gap: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+}
+.cols span:nth-child(1),
+.cols span:nth-child(2) { text-align: left; }
 .roster {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--line);
 }
 .row {
   display: grid;
-  grid-template-columns: 3rem 1fr 4rem 4rem 4rem;
+  grid-template-columns: 3rem 1fr 3.5rem 3.5rem 3.5rem 3.5rem;
   gap: 0.75rem;
   align-items: center;
   padding: 0.85rem 0;
@@ -196,5 +278,5 @@ footer {
 }
 
 @media (max-width: 560px) {
-  .row { grid-template-columns: 2.5rem 1fr 2.5rem 2.5rem 3rem; }
+  .row, .cols { grid-template-columns: 2.5rem 1fr 2.2rem 2.2rem 2.8rem 2.8rem; }
 }
